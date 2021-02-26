@@ -10,7 +10,7 @@ The program accepts 7 arguments
 
 **min_think:**   _the minimum amount of time (sec) that a thread waits before trying to access memory_
 
-**max_think:**   _the maximum amount  of time (sec) that a thread waits. if a thread reaches maximum wait it immediately tries to access memory_
+**max_think:**   _the maximum amount  of time (sec) that a thread waits_
 
 **min_dine:**    _the time dining takes at minimum_
 
