@@ -38,3 +38,5 @@ After succesfully compiled, execute the command to run the program with default 
 Also, you can specify arguments like:
 
 `./build/test <num_phsp> <min_think> <max_think> <min_dine> <max_dine> <dst> <num>`
+
+![App screenshot](/data/ss.png)
