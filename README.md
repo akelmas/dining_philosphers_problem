@@ -39,4 +39,10 @@ Also, you can specify arguments like:
 
 `./build/test <num_phsp> <min_think> <max_think> <min_dine> <max_dine> <dst> <num>`
 
+For example:
+
+`./build/test 5 1 2 1 2 "exponential" 3`
+
+After executing this command, output will look like below.
+
 ![App screenshot](/data/ss.png)
