@@ -3,18 +3,22 @@ This code solves the dining philosophers problem using semaphores and mutexes.
 
 This program basically emulates a number of threads sharing same resources.
 Each thread represents a philosopher.
+the program calcualates average time passed during philosophers thinking
 The program accepts 7 arguments
 
-the program calcualates average time passed during philosophers thinking
+**num_phsp:**    how many thread will be emulated
 
-ARG         DESC
-num_phsp    how many thread will be emulated
-min_think   the minimum amount of time (sec) that a thread waits before trying to access memory
-max_think   the maximum amount  of time (sec) that a thread waits. if a thread reaches maximum wait it immediately tries to access memory
-min_dine    the time dining takes at minimum
-max_dine    the maximum time until the thread state changes from hungry to thinking
-dst         determines the type of distribution to determine waiting amount. 
-num         cycle count that how many times threads repeat the process.
+**min_think:**   the minimum amount of time (sec) that a thread waits before trying to access memory
+
+**max_think:**   the maximum amount  of time (sec) that a thread waits. if a thread reaches maximum wait it immediately tries to access memory
+
+**min_dine:**    the time dining takes at minimum
+
+**max_dine:**    the maximum time until the thread state changes from hungry to thinking
+
+**dst:**         determines the type of distribution to determine waiting amount. 
+
+**num:**         cycle count that how many times threads repeat the process.
 
 
 ## Dependencies/Pre-requisites
