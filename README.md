@@ -6,19 +6,19 @@ Each thread represents a philosopher.
 the program calcualates average time passed during philosophers thinking
 The program accepts 7 arguments
 
-**num_phsp:**    __how many thread will be emulated__
+**num_phsp:**    _how many thread will be emulated_
 
-**min_think:**   __the minimum amount of time (sec) that a thread waits before trying to access memory__
+**min_think:**   _the minimum amount of time (sec) that a thread waits before trying to access memory_
 
-**max_think:**   __the maximum amount  of time (sec) that a thread waits. if a thread reaches maximum wait it immediately tries to access memory__
+**max_think:**   _the maximum amount  of time (sec) that a thread waits. if a thread reaches maximum wait it immediately tries to access memory_
 
-**min_dine:**    __the time dining takes at minimum__
+**min_dine:**    _the time dining takes at minimum_
 
-**max_dine:**    __the maximum time until the thread state changes from hungry to thinking__
+**max_dine:**    _the maximum time until the thread state changes from hungry to thinking_
 
-**dst:**         __determines the type of distribution to determine waiting amount.__
+**dst:**         _determines the type of distribution to determine waiting amount._
 
-**num:**         __cycle count that how many times threads repeat the process.__
+**num:**         _cycle count that how many times threads repeat the process._
 
 
 ## Dependencies/Pre-requisites
