@@ -35,7 +35,7 @@ int max_think=2;
 int min_dine=1;
 int max_dine=2;
 char dst[12]="exponential";
-int num = 3;
+int num = 1;
 
 int phil_state[27];
 int phil_ids[27];
