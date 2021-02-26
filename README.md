@@ -1,3 +1,4 @@
+# Multiple threads sharing memory (Dining philosophers)
 ## Project Description
 This code solves the dining philosophers problem using semaphores and mutexes. 
 
