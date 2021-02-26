@@ -22,7 +22,9 @@ The program accepts 7 arguments
 
 
 ## Dependencies/Pre-requisites
-No additional tool or library required.
+
+You need to have `gcc` and `make` installed.
+
 ## Setup/Installation
 
 Clone the repostory in a directory
