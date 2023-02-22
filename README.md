@@ -1,6 +1,12 @@
 # dining_philosphers_problem
 A multithread C program that emulates threads sharing memory. 
 
+## Dependencies
+* A compatible C Compiler (gcc or clang) with POSIX threads support
+* meson >= 1.0.0
+* ninja >= 1.11.1
+* cmake >= 3.25.2
+
 ## Build instructions
 
 1. Clone the repo
@@ -18,7 +24,7 @@ meson compile -C build
 
 4. Goto build dir `cd build`
 
-```sh
+```
 Usage : ./dining_philosophers n thinking_duration dining_duration cycle
 
                    n : number of philosophers to emulate
