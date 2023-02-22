@@ -16,10 +16,10 @@ if cc.get_id() != 'clang'
     add_project_link_arguments('-lm', language : 'c')
   endif
 endif
+incdir = include_directories('inc')
+subdir('src')
 exe = executable('dining_philosophers', 
-  'main.c',
-  'philosopher.c',
-  'fork.c',
-  'common.c',
+  sources,
+  include_directories : incdir,
   install : true)
 test('basic', exe)
