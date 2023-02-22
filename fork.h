@@ -1,9 +1,9 @@
 #ifndef FORK_H_
 #define FORK_H_
 #include <semaphore.h>
-typedef struct _Fork {
+typedef struct _fork {
   sem_t lock;
-} Fork;
-void fork_init(Fork** fork);
-void fork_close(Fork* fork);
+} fork_t;
+void fork_init(fork_t** fork);
+void fork_close(fork_t* fork);
 #endif

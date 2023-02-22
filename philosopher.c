@@ -7,26 +7,26 @@
 
 #include "common.h"
 #include "fork.h"
-static void think(Philosopher* philosopher) {
+static void think(philosopher_t* philosopher) {
   usleep(philosopher->thinking_duration);
   philosopher->state = ST_HUNGRY;
 }
-static void take_forks(Philosopher* philosopher) {
+static void take_forks(philosopher_t* philosopher) {
   sem_wait(&philosopher->left->lock);
   sem_wait(&philosopher->right->lock);
   philosopher->state = ST_EATING;
 }
-static void eat(Philosopher* philosopher) {
+static void eat(philosopher_t* philosopher) {
   usleep(philosopher->dining_duration);
   philosopher->state = ST_FULL;
 }
-static void release_forks(Philosopher* philosopher) {
+static void release_forks(philosopher_t* philosopher) {
   sem_post(&philosopher->left->lock);
   sem_post(&philosopher->right->lock);
   philosopher->max_cycle--;
   philosopher->state = ST_THINKING;
 }
-static void perform(Philosopher* philosopher, ActionCallback action_callback,
+static void perform(philosopher_t* philosopher, ActionCallback action_callback,
                     double* duration_us) {
   struct timespec start, end;
   clock_gettime(CLOCK_MONOTONIC, &start);
@@ -36,7 +36,7 @@ static void perform(Philosopher* philosopher, ActionCallback action_callback,
   *duration_us += (end.tv_nsec - start.tv_nsec) / 1000000000.0;
 }
 static void* run(void* arg) {
-  Philosopher* philosopher = arg;
+  philosopher_t* philosopher = arg;
   if (philosopher->max_cycle) {
     while (philosopher->max_cycle) {
       switch (philosopher->state) {
@@ -60,10 +60,10 @@ static void* run(void* arg) {
   }
   return philosopher;
 }
-void philosopher_init(Philosopher** philosopher, int index,
+void philosopher_init(philosopher_t** philosopher, int index,
                       int thinking_duration, int dining_duration,
-                      int cycle_count, Fork* left, Fork* right) {
-  (*philosopher) = (Philosopher*)malloc(sizeof(Philosopher));
+                      int cycle_count, fork_t* left, fork_t* right) {
+  (*philosopher) = (philosopher_t*)malloc(sizeof(philosopher_t));
   (*philosopher)->index = index;
   (*philosopher)->thinking_duration = exponential_random(thinking_duration);
   (*philosopher)->dining_duration = exponential_random(dining_duration);
@@ -73,17 +73,17 @@ void philosopher_init(Philosopher** philosopher, int index,
   (*philosopher)->right = right;
   (*philosopher)->tid = 0;
 }
-void philosopher_start(Philosopher* philosopher) {
+void philosopher_start(philosopher_t* philosopher) {
   if (philosopher != NULL) {
     pthread_create(&philosopher->tid, NULL, &run, philosopher);
   }
 }
-void philosopher_finalize(Philosopher* philosopher) {
+void philosopher_finalize(philosopher_t* philosopher) {
   if (philosopher != NULL) {
     pthread_join(philosopher->tid, NULL);
   }
 }
-void philosopher_close(Philosopher* philosopher) {
+void philosopher_close(philosopher_t* philosopher) {
   if (philosopher != NULL) {
     free(philosopher);
   }

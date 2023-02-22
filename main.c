@@ -29,8 +29,8 @@ int main(int argc, char** argv) {
   int thinking_duration = atoi(argv[2]);
   int dining_duration = atoi(argv[3]);
   int max_cycle = atoi(argv[4]);
-  Philosopher* philosophers[number];
-  Fork* forks[number];
+  philosopher_t* philosophers[number];
+  fork_t* forks[number];
   for (int i = 0; i < number; i++) {
     fork_init(&forks[i]);
   }
